@@ -3,7 +3,7 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 public class Sewa {
-    private static final NumberFormat CURRENCY_FORMAT = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+    private static final NumberFormat CURRENCY_FORMAT = NumberFormat.getCurrencyInstance(Locale.forLanguageTag("id-ID"));
     private String idSewa;
     private LocalDate tanggalMulai;
     private int lamaHari;

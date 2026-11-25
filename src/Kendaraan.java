@@ -10,7 +10,7 @@ public class Kendaraan {
     private double tarifPerHari;
     private boolean statusDisewa;
     
-    private static final NumberFormat CURRENCY_FORMAT = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+    private static final NumberFormat CURRENCY_FORMAT = NumberFormat.getCurrencyInstance(Locale.forLanguageTag("id-ID"));
 
     public Kendaraan() {
         this.idKendaraan = "";
