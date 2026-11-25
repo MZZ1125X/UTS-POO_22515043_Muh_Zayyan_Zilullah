@@ -153,6 +153,13 @@ public class Main {
         if (rental.buatSewa(sewa)) {
             System.out.println("Penyewaan berhasil dibuat!");
             sewa.tampilkanInfo();
+        } else if (kendaraan.isStatusDisewa() && lamaHari > 0) {
+            sewa.ubahStatus(false);
+            if (rental.getAntreanSewa().enqueue(sewa)) {
+                System.out.println("Kendaraan sedang disewa. Transaksi masuk antrean (no. " + rental.getAntreanSewa().size() + ").");
+            } else {
+                System.out.println("Kendaraan sedang disewa dan antrean penuh.");
+            }
         } else {
             System.out.println("Gagal membuat penyewaan. Kendaraan mungkin sedang disewa atau data tidak valid.");
         }

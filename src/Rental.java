@@ -14,7 +14,7 @@ public class Rental {
         this.daftarKendaraan = new ArrayList<>();
         this.daftarPenyewa = new ArrayList<>();
         this.daftarSewa = new ArrayList<>();
-        this.antreanSewa = new AntreanSewa(10);
+            this.antreanSewa = new AntreanSewa(3);
     }
 
     public boolean tambahKendaraan(Kendaraan kendaraan) {
@@ -80,6 +80,7 @@ public class Rental {
             return false;
         }
         k.ubahStatusDisewa(true);
+        sewa.ubahStatus(true);
         daftarSewa.add(sewa);
         return true;
     }
