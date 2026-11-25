@@ -1,6 +1,9 @@
 import java.time.LocalDate;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class Sewa {
+    private static final NumberFormat CURRENCY_FORMAT = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
     private String idSewa;
     private LocalDate tanggalMulai;
     private int lamaHari;
@@ -59,8 +62,8 @@ public class Sewa {
         System.out.println("Tanggal Mulai   : " + tanggalMulai);
         System.out.println("Tanggal Kembali : " + tanggalKembali);
         System.out.println("Lama Hari       : " + lamaHari);
-        System.out.println("Tarif Per Hari  : " + tarifPerHari);
-        System.out.println("Total Biaya     : " + totalBiaya);
+        System.out.println("Tarif Per Hari  : " + CURRENCY_FORMAT.format(tarifPerHari));
+        System.out.println("Total Biaya     : " + CURRENCY_FORMAT.format(totalBiaya));
         System.out.println("Status Aktif    : " + (statusAktif ? "Ya" : "Tidak"));
         System.out.println("=================================");
     }

@@ -1,3 +1,6 @@
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class Kendaraan {
     private String idKendaraan;
     private String nomorPolisi;
@@ -6,6 +9,8 @@ public class Kendaraan {
     private int tahun;
     private double tarifPerHari;
     private boolean statusDisewa;
+    
+    private static final NumberFormat CURRENCY_FORMAT = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
 
     public Kendaraan() {
         this.idKendaraan = "";
@@ -64,7 +69,7 @@ public class Kendaraan {
         System.out.println("Merk           : " + merk);
         System.out.println("Tipe           : " + tipe);
         System.out.println("Tahun          : " + tahun);
-        System.out.println("Tarif Per Hari : " + tarifPerHari);
+        System.out.println("Tarif Per Hari : " + CURRENCY_FORMAT.format(tarifPerHari));
         System.out.println("Status Disewa  : " + (statusDisewa ? "Ya" : "Tidak"));
         System.out.println("============================");
     }
